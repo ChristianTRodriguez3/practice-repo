@@ -1,27 +1,21 @@
-## First Name Last Name
+## Christian Rodriguez
 
-### Term Year 
+### SummerB 2021 
 
 DSBA student at [Florida Polytechnic University](https://www.floridapoly.edu) currently enrolled in: 
 
-- Course 1
+- Intro to data Science
 
-- Course 2
-
-- Course 3
-
-- Course 4
+- Precalculus
 
 **Hobbies:**
 
 I am _passionate about_: 
 
-- Thing 1
+- Gaming
 
-- Thing 2
-
-- Thing 3 as shown in this website <https://www.floridapoly.edu>
+- Art
 
 ***
 
-> Last modified: YYYY/MM/DD
+> Last modified: 2021/07/07
