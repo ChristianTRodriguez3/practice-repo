@@ -14,7 +14,11 @@ I am _passionate about_:
 
 - Gaming
 
+![A gaming controler](images/GamingController.jpg)
+
 - Art
+
+![An art brush](images/ArtBrush.jpg)
 
 ***
 

@@ -4,7 +4,7 @@
 
 Classwork (CW) activity: _Practicing git commands and Markdown._
 
-![](dataNetwork.jpg "Data data data")
+![A web of hexagons with the word data](images/dataNetwork.jpg "Data data data")
 
 
 ## Instructions: 
