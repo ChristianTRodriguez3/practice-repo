@@ -24,6 +24,7 @@ b. Include a link to your GitHub repo in this document.
 
 
 c. Take a screenshot of the GitHub repo, add the screenshot file to the repo, and include it in this document (review how to insert a picture using markdown)
+![Screenshot of Repo](../images/Screenshotofrepo.jpg)
 
 
 # Problem 2 (30 points)
@@ -32,6 +33,11 @@ For this problem, you are asked to create a list of **3 concepts** you have lear
 
 _Edit this `.Rmd` file to include the solutions here._
 
+## Intro to data Science
+- How to install R-Studio
+- How to use mark-up to add emphasis to your text
+- How to use mark-up to create a table
+- [Link to Markdown Tutorial](https://commonmark.org/help/tutorial/)
 
 
 # Problem 3 (40 points)
