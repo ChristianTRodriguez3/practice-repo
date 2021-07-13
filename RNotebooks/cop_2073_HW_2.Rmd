@@ -45,16 +45,51 @@ _Edit this `.Rmd` file to include the solutions here._
 In this problem you will practice some basic R operations. Include solutions to each items by inserting a new R chunk of code (make sure you run the chunk so that the output is displayed)
 
 (a) Create a variable called `my_name` that contains your preferred name.
+```{r}
+my_name <- "Christian"
+print(my_name)
+```
 
 (b) Create a variable called `name_length` that holds how many letters are in `my_name`.
+```{r}
+name_length <- nchar(my_name, type = "chars")
+print(name_length)
+```
 
 (c) Show which value is bigger: $e^\pi$ or $\pi^e$. 
+```{r}
+e <- (1 + 1/100)^100
+x <- c(e^pi,pi^e)
+print(x)
+max(x)
+```
 
 (d) Define a function called `add_tree` that takes a single argument and returns a value 3 times larger than the input.
+```{r}
+# Creates the function add_tree that multiplies an input by 3
+add_tree <- function(t) {
+  t <- t*3
+  t
+}
+# Asks the user to input a number into the console
+c <- readline(prompt = "_ * 3 =")
+#prints the users input into the equation
+print(paste(c,"* 3 ="))
+# Converts the input from a string to an integer
+c <- as.integer(c)
+# Runs the add_tree function and prints the output
+add_tree(c)
+```
 
 (e) Use the colon operator `:` to create a vector `v` of numbers from 10 to 49. Find the length of this vector using the `length()` function.
+```{r}
+v <- (10:49)
+length(v)
+```
 
 (f) Use the `seq()` function to produce a range of number from -5 to 10 in 0.5 increments.
-
+```{r}
+seq(-5,10,0.5)
+```
 
 
