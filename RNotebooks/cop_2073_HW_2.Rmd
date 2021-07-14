@@ -64,21 +64,16 @@ print(x)
 max(x)
 ```
 
-(d) Define a function called `add_tree` that takes a single argument and returns a value 3 times larger than the input.
+(d) Define a function called `add_three` that takes a single argument and returns a value 3 units larger than the input.
 ```{r}
 # Creates the function add_tree that multiplies an input by 3
-add_tree <- function(t) {
-  t <- t*3
-  t
+add_three <- function() {
+  t <- as.integer(readline(prompt = "_ + 3 ="))
+  print(paste(t,"+ 3 ="))
+  t <- t+3
+  print(t)
 }
-# Asks the user to input a number into the console
-c <- readline(prompt = "_ * 3 =")
-#prints the users input into the equation
-print(paste(c,"* 3 ="))
-# Converts the input from a string to an integer
-c <- as.integer(c)
-# Runs the add_tree function and prints the output
-add_tree(c)
+add_three()
 ```
 
 (e) Use the colon operator `:` to create a vector `v` of numbers from 10 to 49. Find the length of this vector using the `length()` function.
