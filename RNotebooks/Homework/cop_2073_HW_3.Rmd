@@ -12,8 +12,20 @@ output: html_notebook
 
 > To convert a length `L` from feet (`ft`) and inches (`in`) to meters (`m`), one can use the relation: `L(m) = L(ft) × 0.3048 + L(in) × 0.0254`
 
+```{r}
+imperial_to_metric <- function(feet, inches) {
+  meters <- (feet * 0.3048) + (inches * 0.0254)
+  print(meters)
+}
+imperial_to_metric(10, 11)
+```
+
 
 (b) (5 points) Create a variable `height_in_meters` by passing your height in imperial to the `imperial_to_metric` function.
+
+```{r}
+height_in_meters <- imperial_to_metric(5, 7)
+```
 
 
 
@@ -23,6 +35,13 @@ output: html_notebook
 `R` comes with many functions that you can use to do sophisticated tasks like random sampling. For example, you can round a number with the `round()` function, or calculate its factorial with the `factorial()` function. Using a function is pretty simple. Just write the name of the function and then the data you want the function to operate on in parentheses.
 
 (a) (5 points) Find `round(3.1415)`, `factorial(12)`, `mean(1:17)`.
+
+```{r}
+round(3.1415)
+factorial(12)
+mean(1:17)
+```
+
 
 (b) (5 points) You can create an object named `die` that contains the numbers one through six:
 
@@ -35,7 +54,18 @@ You can simulate a roll of the die with `R`’s `sample()` function. `sample()` 
 
 Try `sample(x = die, size = 1)`. 
 
+```{r}
+sample(x = die, size = 1)
+```
+
+
 Is there any difference if you type `sample(die, size = 1)` ?
+
+```{r}
+sample(die, size = 1)
+#There is no difference
+```
+
 
 
 # Problem 3
@@ -44,9 +74,23 @@ Use `R` as a calculator to compute the following values:
 
 (a) (5 points) $27 (38 -17)$
 
+```{r}
+27 * (38 - 17)
+```
+
+
 (b) (5 points) $ln(14^7)$
 
+```{r}
+log((14^7), base = exp(1))
+```
+
+
 (c) (5 points) $\sqrt\frac{436}{12}$
+
+```{r}
+sqrt((436/12))
+```
 
 
 
@@ -58,15 +102,42 @@ $a = (5, 10, 15, 20, ..., 160)$
 
 $b = (87, 86, 85, ..., 56)$
 
+```{r}
+a <- seq(5, 160, 5)
+b <- seq(87, 56)
+```
+
+
 (a) (5 points) Multiply these vectors and call the result `d`. 
+
+```{r}
+d <- a * b
+d
+```
+
 
 (b) (15 points) Select subsets of `d` to identify the following.
 
 - What are the 19th, 20th, and 21st elements of `d`?
 
+```{r}
+d[19:21]
+```
+
+
 - What are all of the elements of `d` which are less than 2000?
 
+```{r}
+d[d<2000]
+```
+
+
 - How many elements of `d` are greater than 6000?
+
+```{r}
+length(d[d>6000])
+```
+
 
 
 # Problem 5
@@ -79,13 +150,44 @@ nouns <- c("apple", "flower", "insect", "lettuce", "knife", "dog", "cloud", "per
 
 (a) (5 points) Use the `length()` function to display the number of elements in `nouns`.
 
+```{r}
+length(nouns)
+```
+
+
 (b) (5 points) Use indexing to create a new vector consisting of the first 4 elements of `nouns`.
+
+```{r}
+nouns_first_four <- nouns[1:4]
+nouns_first_four
+```
+
 
 (c) (5 points) Use indexing to create a new vector consisting of only the last 8 elements of `nouns`.
 
+```{r}
+nouns_last_eight <- nouns[-1:-2]
+nouns_last_eight
+```
+
+
 (d) (5 points) Use indexing to create a new vector of the 1st, 3rd through 6th, and 10th elements of `nouns` (the length of the resulting vector should be 6)
 
+```{r}
+indexing_numbers <- c(1, 3:6, 10)
+nouns_more <- nouns[indexing_numbers]
+nouns_more
+length(nouns_more)
+```
+
+
 (e) (5 points) Create a new vector with the elements of `nouns` in reverse order.
+
+```{r}
+nouns_reverse <- nouns[10:1]
+nouns_reverse
+```
+
 
 
 # Problem 6
@@ -101,9 +203,27 @@ rescale01 <- function(x) {
 
 (a) (5 points) Evaluate `rescale01(c(0, 5, 10))`
 
+```{r}
+rescale01(c(0, 5, 10))
+```
+
+
 (b) (5 points) Describe what the `rescale01` function does.
 
+The function rescale01 takes a vector and finds the minimum and maximum of that vector then takes each value in the vector and subracts the minimum, then divides it by the difference between the minimum and maximum.
+
 (c) (5 points) What would happen if `x` contained a single missing value, and `na.rm` was `FALSE`? Show an example.
+
+The function would return NA for all of the missing values put in, but the other values would return as normal. This is because finite is set to true, as missing data counts as non-finite and is omitted from the vector.
+
+```{r}
+rescale02 <- function(x) {
+  rng <- range(x, na.rm = FALSE, finite = TRUE)
+  (x - rng[1]) / (rng[2] - rng[1])
+}
+rescale02(c(NA, 0, 5, 10))
+```
+
 
 > Hint: check the documentation (help page) for `range()`.
 
